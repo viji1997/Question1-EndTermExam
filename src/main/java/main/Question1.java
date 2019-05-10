@@ -8,24 +8,24 @@ class Courses {
 		}
 }
 
-class ECE { //extend the parent class here 
+class ECE extends Courses {  
 	public String displayCourseDetails(String dept) {
-		// write or edit your code here 
-		String commonSubjects = "";//call the parent function after using inheritence
-		String subject1 = ""; //write the specific subjects name here
-		String subject2 = ""; //write the specific subjects name here
+		Courses objECE = new Courses();
+		String commonSubjects = objECE.displayCourseDetails("ECE");
+		String subject1 = "Microprocessor"; 
+		String subject2 = "Linear Integrated Circuits"; 
 		
 		String specificSubjects = " specific subjects are:\n4. "+subject1+"\n5. "+subject2;
 		return commonSubjects+dept+specificSubjects;
 		
 	}
 }
-class Mechanical { //extend the parent class here 
+class Mechanical extends Courses {  
 	public String displayCourseDetails(String dept) {
-		// write or edit your code here 
-		String commonSubjects = "";//call the parent function after using inheritence
-		String subject1 = "Fluid Mechanics"; //write the specific subjects name here
-		String subject2 = "Thermodynamics"; //write the specific subjects name here
+		Courses objMECH = new Courses();
+		String commonSubjects = objMECH.displayCourseDetails("Mechanical");
+		String subject1 = "Fluid Mechanics"; 
+		String subject2 = "Thermodynamics"; 
 		
 		String specificSubjects = " specific subjects are:\n4. "+subject1+"\n5. "+subject2;
 		return commonSubjects+dept+specificSubjects;	
@@ -33,13 +33,14 @@ class Mechanical { //extend the parent class here
 	}
 
 }
-class CSE  { //extend the parent class here 
+class CSE extends Courses   { 
 	public String displayCourseDetails(String dept) {
 		
-		// write or edit your code here 
-		String commonSubjects = "";//call the parent function after using inheritence
-		String subject1 = ""; //write the specific subjects name here
-		String subject2 = ""; //write the specific subjects name here
+		
+		Courses objCSE =new Courses();
+		String commonSubjects = objCSE.displayCourseDetails("CSE");
+		String subject1 = "Network Theory"; 
+		String subject2 = "Operating Systems"; 
 		
 		String specificSubjects = " specific subjects are:\n4. "+subject1+"\n5. "+subject2;
 		return commonSubjects+dept+specificSubjects;		
@@ -57,23 +58,20 @@ public class Question1 {
 		switch(choice) {
 		case 1:
 		{
-			//this case is or ECE
-			//Initialize the Class using appropriately taking the concept of inheritence and polymorphism in mind.
-			System.out.println("");//call the function of the class that you initialized
+			ECE objece = new ECE();
+			System.out.println(objece.displayCourseDetails("ECE"));//call the function of the class that you initialized
 			break;
 		}
 		case 2:
 		{
-			//this case is or Mechanical
-			//Initialize the Class using appropriately taking the concept of inheritence and polymorphism in mind.
-			System.out.println("");//call the function of the class that you initialized
+			Mechanical objmech = new Mechanical();
+			System.out.println(objmech.displayCourseDetails("Mechanical"));//call the function of the class that you initialized
 			break;
 		}
 		case 3:
 		{
-			//this case is or CSE
-			//Initialize the Class using appropriately taking the concept of inheritence and polymorphism in mind.
-			System.out.println("");//call the function of the class that you initialized
+		    CSE objcse = new CSE();
+			System.out.println(objcse.displayCourseDetails("CSE"));//call the function of the class that you initialized
 			break;
 		}
 		default:
